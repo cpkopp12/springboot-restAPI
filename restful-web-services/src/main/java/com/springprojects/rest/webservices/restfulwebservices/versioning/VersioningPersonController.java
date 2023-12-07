@@ -36,4 +36,22 @@ public class VersioningPersonController {
 		return new PersonV2(new Name("bob","charlie"));
 	}
 	
+	//CAN ALSO USE AN ACCEPT HEADER -> same results
+	
+//	@GetMapping(path = "/person/accept", produces = "X-API-VERSION=1")
+//	public PersonV1 getFirstVersionOfPersonAcceptHeaders() {
+//		return new PersonV1("Bob Charlie");
+//	}
+//	
+//	@GetMapping(path = "/person/accept", produces = "X-API-VERSION=2")
+//	public PersonV2 getSecondVersionOfPersonAcceptHeaders() {
+//		return new PersonV2(new Name("bob","charlie"));
+//	}
+	
+	
+	//uri versioning => increased uri pollutions
+	//headers => cannot cache just off of url
+	//documentation is easiest for uri versioning 
+	//all of these versioning methods are used in practice, but stick to one
+	
 }
